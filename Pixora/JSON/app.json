@@ -1,0 +1,194 @@
+
+{
+    "story": {
+        "storyResponse": [
+            {
+                "user": "Gündem",
+                "userImage": "gundem1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "gundem1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Hava Sıcaklıkları Artmaya Devam Ediyor",
+                        "spot": "Yaz aylarının gelmesiyle birlikte hava sıcaklıkları ülke genelinde artmaya devam ediyor. Uzmanlar sıcak çarpması ve güneş yanıklarına karşı uyarıyor."
+                    },
+                    {
+                        "image": "gundem2_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Konut Kredileri Açıklandı",
+                        "spot": "Yeni konut kredisi paketleri açıklandı. Faiz oranları ve ödeme planlarıyla ilgili detaylar açıklandı. Vatandaşlar yeni kredi imkanlarını değerlendirmeye başladı."
+                    }
+                ]
+            },
+            {
+                "user": "Tarih",
+                "userImage": "tarih1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "tarih1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Antik Mısır",
+                        "spot": "Tutankhamun'un mezarının keşfi, mumyalama teknikleri, piramitlerin inşası ve Antik Mısır'ın gizemli inançları..."
+                    }
+                ]
+            },
+            {
+                "user": "Edebiyat",
+                "userImage": "edebiyat1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "edebiyat1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Türk Edebiyatı Klasikleri",
+                        "spot": "Nutuk'un yazılma süreci, içeriği ve Türk toplumuna etkileri. Atatürk'ün Nutuk'ta yer alan önemli mesajları ve gelecek nesillere bıraktığı miras..."
+                    }
+                ]
+            },
+            {
+                "user": "Yaşam",
+                "userImage": "yasam1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "yasam1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Seyahat Rehberi",
+                        "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
+                    },
+                    {
+                        "image": "yasam1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Seyahat Rehberi",
+                        "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
+                    },
+                    {
+                        "image": "yasam1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Seyahat Rehberi",
+                        "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
+                    },
+                    {
+                        "image": "yasam1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Seyahat Rehberi",
+                        "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
+                    }
+                ]
+            },
+            {
+                "user": "Spor",
+                "userImage": "spor1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "spor1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Futbol Haberleri",
+                        "spot": "Süper Lig'de oynanan derbi maçının sonuçları, goller, tartışmalı pozisyonlar ve maç sonu değerlendirmeleri..."
+                    },
+                    {
+                        "image": "spor2_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Basketbol Gündemi",
+                        "spot": "NBA finallerinde yaşanan heyecan dolu anlar, şampiyon takımın belirlenmesi ve oyuncuların performansları..."
+                    },
+                    {
+                        "image": "spor3_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Olimpiyatlar",
+                        "spot": "Olimpiyat Oyunları'nda Türkiye'nin madalya umudu olan sporcular, yarışmalardan son dakika haberleri ve başarı hikayeleri..."
+                    },
+                    {
+                        "image": "spor4_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Olimpiyatlar",
+                        "spot": "Olimpiyat Oyunları'nda Türkiye'nin madalya umudu olan sporcular, yarışmalardan son dakika haberleri ve başarı hikayeleri..."
+                    }
+                ]
+            },
+          {
+                "user": "Haber",
+                "userImage": "haber1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "haber1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Magazin Haberleri",
+                        "spot": "Ünlülerin özel hayatları, yeni projeleri, kırmızı halı etkinlikleri ve magazin dünyasından son dedikodular..."
+                    }
+                ]
+            },
+            {
+                "user": "Bilim",
+                "userImage": "bilim1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "bilim1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Tıp Dünyası",
+                        "spot": "Kanser tedavisindeki yeni gelişmeler, aşı çalışmaları, genetik araştırmalar ve sağlık alanındaki son buluşlar..."
+                    },
+                    {
+                        "image": "bilim2_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Uzay Araştırmaları",
+                        "spot": "Mars'a insanlı görev planları, yeni gezegen keşifleri, kara delikler ve evrenin sırlarına dair araştırmalar..."
+                    }
+                ]
+            },
+            {
+                "user": "Sanat",
+                "userImage": "sanat1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "sanat1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Resim Sergisi",
+                        "spot": "Çağdaş Türk ressamlarının eserlerinden oluşan serginin açılışı, sanatçıların hayatları ve eserlerinin analizleri..."
+                    }
+                ]
+            },
+            {
+                "user": "Ekonomi",
+                "userImage": "ekonomi1_story.jpg",
+                "storyDetails": [
+                    {
+                        "image": "ekonomi1_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Euro ve Dolar Artışta",
+                        "spot": "Euro ve dolar kurlarında yaşanan artış, piyasaları etkiledi. Uzmanlar döviz kurlarındaki yükselişin nedenlerini ve olası etkilerini değerlendirdi."
+                    },
+                    {
+                        "image": "ekonomi2_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Merkez Bankası Faiz İndirimi",
+                        "spot": "Merkez Bankası'nın faiz indirimi kararı, piyasalarda geniş yankı buldu. Kararın ekonomik büyüme üzerindeki etkileri tartışılıyor."
+                    },
+                    {
+                        "image": "ekonomi3_story.jpg",
+                        "video": "",
+                        "videoDuration": "",
+                        "title": "Borsa İstanbul Yükselişine Devam Ediyor",
+                        "spot": "Borsa İstanbul, yükseliş trendini sürdürüyor. Endeksin yeni zirvelere ulaşması, yatırımcıları sevindirdi."
+                    }
+                ]
+            }
+        ]
+    }
+}
