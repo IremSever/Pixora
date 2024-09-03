@@ -19,8 +19,9 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
     @IBOutlet weak var lblUsername: UILabel!
   
     @IBOutlet weak var imgUser: UIImageView!
-    @IBOutlet weak var stackViewProgress: UIStackView!
+    
  
+    @IBOutlet weak var stackViewProgress: UIStackView!
     
     @IBOutlet weak var storyItemCollectionView: UICollectionView!
     
@@ -56,7 +57,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         storyItemCollectionView.delegate = self
         storyItemCollectionView.dataSource = self
         storyItemCollectionView.isPagingEnabled = true
-        storyItemCollectionView.isScrollEnabled = false
+        storyItemCollectionView.isScrollEnabled = true
     }
     
     func registerCell() {
@@ -87,8 +88,8 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         storyProgressView?.removeFromSuperview()
         storyProgressView = StoryProgressView(arrayStories: storyDetail.count, durations: durations)
         storyProgressView?.delegate = self
-//        storyProgressView?.frame = stackViewProgress.bounds
-//        stackViewProgress.addSubview(storyProgressView!)
+       storyProgressView?.frame = stackViewProgress.bounds
+        stackViewProgress.addSubview(storyProgressView!)
         storyProgressView?.animate(index: currentStoryIndex)
     }
 
@@ -211,6 +212,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
             storyPreviewDelegate?.didStoryViewEnd()
         }
     }
+
     
     private func playCurrentVideo() {
         if let visibleCell = storyItemCollectionView.visibleCells.first as? StoryItemDetailCollectionViewCell {
