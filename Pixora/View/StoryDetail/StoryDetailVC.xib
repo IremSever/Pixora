@@ -20,9 +20,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-yf-SXF">
-                    <rect key="frame" x="0.0" y="59" width="375" height="574"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A2J-ox-XuS">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A2J-ox-XuS">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -36,10 +36,10 @@
                 <bool key="isElement" value="YES"/>
             </accessibility>
             <constraints>
-                <constraint firstItem="YcH-yf-SXF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TgP-Gr-cgp"/>
-                <constraint firstItem="YcH-yf-SXF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qvh-Pk-nmk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YcH-yf-SXF" secondAttribute="trailing" id="wCA-Dn-ISn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YcH-yf-SXF" secondAttribute="bottom" id="xyt-X4-ngR"/>
+                <constraint firstItem="YcH-yf-SXF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TgP-Gr-cgp"/>
+                <constraint firstItem="YcH-yf-SXF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qvh-Pk-nmk"/>
+                <constraint firstAttribute="trailing" secondItem="YcH-yf-SXF" secondAttribute="trailing" id="wCA-Dn-ISn"/>
+                <constraint firstAttribute="bottom" secondItem="YcH-yf-SXF" secondAttribute="bottom" id="xyt-X4-ngR"/>
             </constraints>
             <point key="canvasLocation" x="-193" y="44"/>
         </view>

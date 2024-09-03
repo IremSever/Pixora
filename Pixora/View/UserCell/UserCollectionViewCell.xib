@@ -63,6 +63,8 @@
                         <constraints>
                             <constraint firstItem="q7M-hB-eYg" firstAttribute="centerX" secondItem="SbP-v1-qPp" secondAttribute="centerX" id="1FS-c0-LXA"/>
                             <constraint firstItem="q7M-hB-eYg" firstAttribute="top" secondItem="SbP-v1-qPp" secondAttribute="top" constant="15" id="3TL-HJ-qPr"/>
+                            <constraint firstAttribute="height" constant="203" id="Svw-xK-W63"/>
+                            <constraint firstAttribute="width" constant="184" id="igq-Lc-xNq"/>
                         </constraints>
                     </view>
                 </subviews>

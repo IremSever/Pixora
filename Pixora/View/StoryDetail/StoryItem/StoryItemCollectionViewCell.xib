@@ -19,9 +19,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nBW-Mp-0yI">
-                        <rect key="frame" x="0.0" y="338" width="393" height="514"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qgJ-CK-5zi">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qgJ-CK-5zi">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -96,7 +96,7 @@
                 <constraint firstItem="xgJ-Sz-GIk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="85" id="7z0-ZB-TG6"/>
                 <constraint firstItem="nBW-Mp-0yI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9nC-6e-OfN"/>
                 <constraint firstAttribute="trailing" secondItem="nBW-Mp-0yI" secondAttribute="trailing" id="FzS-sN-EZe"/>
-                <constraint firstItem="nBW-Mp-0yI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="338" id="O8L-Nf-HIE"/>
+                <constraint firstItem="nBW-Mp-0yI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="O8L-Nf-HIE"/>
                 <constraint firstItem="xgJ-Sz-GIk" firstAttribute="centerX" secondItem="yzW-kP-GL3" secondAttribute="centerX" id="RlA-FU-pvd"/>
                 <constraint firstItem="oQo-t0-IEo" firstAttribute="top" secondItem="eDF-fV-uRQ" secondAttribute="bottom" constant="15" id="Ygr-xN-Yk9"/>
                 <constraint firstItem="xgJ-Sz-GIk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="e2a-cG-c0O"/>

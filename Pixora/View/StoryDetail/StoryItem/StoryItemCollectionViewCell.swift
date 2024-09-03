@@ -60,7 +60,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
     }
     
     func registerCell() {
-        storyItemCollectionView.register(StoryItemDetailCollectionViewCell.self, forCellWithReuseIdentifier: "StoryItemDetailCollectionViewCell")
+        storyItemCollectionView.register(UINib(nibName: "StoryItemDetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StoryItemDetailCollectionViewCell")
     }
     
     
@@ -87,8 +87,8 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         storyProgressView?.removeFromSuperview()
         storyProgressView = StoryProgressView(arrayStories: storyDetail.count, durations: durations)
         storyProgressView?.delegate = self
-        storyProgressView?.frame = stackViewProgress.bounds
-        stackViewProgress.addSubview(storyProgressView!)
+//        storyProgressView?.frame = stackViewProgress.bounds
+//        stackViewProgress.addSubview(storyProgressView!)
         storyProgressView?.animate(index: currentStoryIndex)
     }
 

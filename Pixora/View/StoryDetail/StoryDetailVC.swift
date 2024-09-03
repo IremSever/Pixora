@@ -77,17 +77,18 @@ class StoryDetailVC: UIViewController, UICollectionViewDataSource, UICollectionV
        }
 
        func registerCell() {
-           collectionViewStoryDetail.register(StoryItemCollectionViewCell.self, forCellWithReuseIdentifier: "StoryItemCollectionViewCell")
+           collectionViewStoryDetail.register(UINib(nibName: "StoryItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StoryItemCollectionViewCell")
        }
 
-       func scrollToSelectedStory() {
-           guard selectedIndex >= 0 && selectedIndex < viewModel.storyData.first?.storyDetails.count ?? 0 else {
-               return
-           }
+    func scrollToSelectedStory() {
+        guard selectedIndex >= 0 && selectedIndex < (viewModel.storyData.first?.storyDetails.count ?? 0) else {
+            return
+        }
 
-           let indexPath = IndexPath(item: selectedIndex, section: 0)
-           collectionViewStoryDetail?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-       }
+        let indexPath = IndexPath(item: selectedIndex, section: 0)
+        collectionViewStoryDetail.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+
 
        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
            return viewModel.numberOfRowsInSection(section: section)
@@ -108,25 +109,26 @@ class StoryDetailVC: UIViewController, UICollectionViewDataSource, UICollectionV
            return collectionViewStoryDetail.frame.size
        }
 
-       func scrollViewDidScroll(_ scrollView: UIScrollView) {
-           guard !isTransitioning else { return }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !isTransitioning else { return }
 
-           let currentOffset = scrollView.contentOffset.x
-           let pageWidth = scrollView.frame.width
-           let fractionalPage = currentOffset / pageWidth
+        let currentOffset = scrollView.contentOffset.x
+        let pageWidth = scrollView.frame.width
+        let fractionalPage = currentOffset / pageWidth
 
-           let targetIndex = selectedIndex + (fractionalPage > CGFloat(selectedIndex) ? 1 : -1)
+        let targetIndex = selectedIndex + (fractionalPage > CGFloat(selectedIndex) ? 1 : -1)
+        
+        if fractionalPage > CGFloat(selectedIndex) && fractionalPage - CGFloat(selectedIndex) >= 1/3 && targetIndex < viewModel.storyData.count {
+            isTransitioning = true
+            selectedIndex += 1
+            collectionViewStoryDetail.scrollToItem(at: IndexPath(item: selectedIndex, section: 0), at: .centeredHorizontally, animated: true)
+        } else if fractionalPage < CGFloat(selectedIndex) && CGFloat(selectedIndex) - fractionalPage >= 1/3 && targetIndex >= 0 {
+            isTransitioning = true
+            selectedIndex -= 1
+            collectionViewStoryDetail.scrollToItem(at: IndexPath(item: selectedIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
 
-           if fractionalPage > CGFloat(selectedIndex) && fractionalPage - CGFloat(selectedIndex) >= 1/3 && targetIndex < viewModel.storyData.first?.storyDetails.count ?? 0 {
-               isTransitioning = true
-               selectedIndex += 1
-               performCubeTransition(toNext: true)
-           } else if fractionalPage < CGFloat(selectedIndex) && CGFloat(selectedIndex) - fractionalPage >= 1/3 && targetIndex >= 0 {
-               isTransitioning = true
-               selectedIndex -= 1
-               performCubeTransition(toNext: false)
-           }
-       }
 
        func performCubeTransition(toNext: Bool) {
            let transition = CATransition()

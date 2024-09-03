@@ -16,8 +16,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userCollectionView?.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        userCollectionView.dataSource = self
         userCollectionView.delegate = self
+        userCollectionView.isPagingEnabled = true
         
         registerCell()
         loadStoryDetails()
@@ -61,7 +67,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         storyDetailVC.selectedStory = selectedStory
         storyDetailVC.selectedIndex = indexPath.item
-        navigationController?.pushViewController(storyDetailVC, animated: true)
+        storyDetailVC.modalPresentationStyle = .fullScreen
+        self.present(storyDetailVC, animated: true, completion: nil)
        
     }
 }
