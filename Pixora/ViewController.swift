@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         userCollectionView.dataSource = self
         userCollectionView.delegate = self
-        userCollectionView.isPagingEnabled = true
+        userCollectionView.isPagingEnabled = false
         userCollectionView.showsHorizontalScrollIndicator = false
         
         registerCell()

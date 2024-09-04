@@ -90,7 +90,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="0.92156863209999995" green="0.69019609689999994" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oQo-t0-IEo" secondAttribute="trailing" constant="16" id="5rw-es-hbd"/>
                 <constraint firstItem="xgJ-Sz-GIk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="85" id="7z0-ZB-TG6"/>

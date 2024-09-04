@@ -122,11 +122,11 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         if currentStoryIndex < storyDetail.count - 1 {
             currentStoryIndex += 1
             storyProgressView?.animate(index: currentStoryIndex)
-            
+
             let indexPath = IndexPath(item: currentStoryIndex, section: 0)
             storyItemCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             storyItemCollectionView.layoutIfNeeded()
-            
+
             if let cell = storyItemCollectionView.cellForItem(at: indexPath) as? StoryItemDetailCollectionViewCell {
                 cell.videoPlayerView?.playVideo()
             }
@@ -134,7 +134,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
             storyPreviewDelegate?.didStoryViewEnd()
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return storyDetail.count
     }

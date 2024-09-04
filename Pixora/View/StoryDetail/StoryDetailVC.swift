@@ -32,7 +32,7 @@ class StoryDetailVC: UIViewController, UICollectionViewDataSource, UICollectionV
            collectionViewStoryDetail?.delegate = self
            collectionViewStoryDetail?.dataSource = self
            collectionViewStoryDetail?.isPagingEnabled = true
-
+           
            registerCell()
            setupPanGesture()
            loadData()
