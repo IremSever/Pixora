@@ -41,15 +41,16 @@ class UserCollectionViewCell: UICollectionViewCell {
         imageView.superview?.layer.sublayers?.removeAll(where: { $0 is CAShapeLayer })
         
         let lineWidth: CGFloat = 5.0
-        let gap: CGFloat = 10
+        let gap: CGFloat = 50
+        let lineGap: CGFloat = 10
         let radius = (imageView.bounds.width) / 2
         let arcLength = 2 * CGFloat.pi / CGFloat(count)
         
         for i in 0..<count {
             let startAngle = CGFloat(i) * arcLength
-            let endAngle = startAngle + arcLength - gap / radius
+            let endAngle = startAngle + arcLength - lineGap / radius
             
-            let path = UIBezierPath(arcCenter: CGPoint(x: (imageView.frame.width + gap) / 2, y: (imageView.frame.height + 8) / 2), radius: radius + lineWidth / 2, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+            let path = UIBezierPath(arcCenter: CGPoint(x: (imageView.frame.width + gap) / 2, y: (imageView.frame.height + 16) / 2), radius: radius + lineWidth / 2, startAngle: startAngle, endAngle: endAngle, clockwise: true)
             
             let shapeLayer = CAShapeLayer()
             shapeLayer.path = path.cgPath

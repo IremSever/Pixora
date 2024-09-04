@@ -41,7 +41,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ytJ-DD-ZJh" secondAttribute="bottom" constant="8" id="qmR-Y9-UTl"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-wG-dFW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-wG-dFW">
                                         <rect key="frame" x="0.0" y="151" width="184" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="eYD-jP-xjy"/>

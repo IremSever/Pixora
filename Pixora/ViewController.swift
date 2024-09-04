@@ -71,16 +71,4 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.present(storyDetailVC, animated: true, completion: nil)
        
     }
-    
-}
-extension ViewController {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-        let nextStoryIndex = pageIndex + 1
-        
-        if nextStoryIndex < storyResponse.count {
-            let indexPath = IndexPath(item: nextStoryIndex, section: 0)
-            userCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
-    }
 }
