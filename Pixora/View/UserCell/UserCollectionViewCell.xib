@@ -46,7 +46,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="eYD-jP-xjy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

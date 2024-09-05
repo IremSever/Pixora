@@ -60,23 +60,23 @@
                         "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
                     },
                     {
-                        "image": "yasam1_story.jpg",
-                        "video": "",
-                        "videoDuration": "",
+                        "image": "",
+                        "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+                        "videoDuration": "47",
                         "title": "Seyahat Rehberi",
                         "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
                     },
                     {
-                        "image": "yasam1_story.jpg",
-                        "video": "",
-                        "videoDuration": "",
+                        "image": "",
+                        "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                        "videoDuration": "60",
                         "title": "Seyahat Rehberi",
                         "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
                     },
                     {
-                        "image": "yasam1_story.jpg",
-                        "video": "",
-                        "videoDuration": "",
+                        "image": "",
+                        "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                        "videoDuration": "15",
                         "title": "Seyahat Rehberi",
                         "spot": "Kapadokya'nın tarihi ve doğal güzellikleri, peribacaları, yer altı şehirleri ve balon turlarıyla unutulmaz bir seyahat deneyimi..."
                     }
@@ -101,14 +101,14 @@
                         "spot": "NBA finallerinde yaşanan heyecan dolu anlar, şampiyon takımın belirlenmesi ve oyuncuların performansları..."
                     },
                     {
-                        "image": "spor3_story.jpg",
-                        "video": "",
-                        "videoDuration": "",
+                        "image": "",
+                        "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+                        "videoDuration": "15",
                         "title": "Olimpiyatlar",
                         "spot": "Olimpiyat Oyunları'nda Türkiye'nin madalya umudu olan sporcular, yarışmalardan son dakika haberleri ve başarı hikayeleri..."
                     },
                     {
-                        "image": "spor4_story.jpg",
+                        "image": "spor3_story.jpg",
                         "video": "",
                         "videoDuration": "",
                         "title": "Olimpiyatlar",
@@ -192,3 +192,5 @@
         ]
     }
 }
+
+

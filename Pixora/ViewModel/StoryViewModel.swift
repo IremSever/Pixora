@@ -44,7 +44,6 @@ class StoryViewModel {
     
     private func handleResponse(_ storyModel: StoryModel) {
         self.storyData = storyModel.story.storyResponse
-        //print("*********************", storyModel.stories)
     }
     
     func numberOfRowsInSection(section: Int) -> Int {

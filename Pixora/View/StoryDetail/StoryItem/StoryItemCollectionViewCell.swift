@@ -14,24 +14,19 @@ protocol StoryPreviewProtocol: AnyObject {
 }
 
 class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, SegmentedProgressBarDelegate {
-    
-    
     @IBOutlet weak var lblUsername: UILabel!
-  
     @IBOutlet weak var imgUser: UIImageView!
     
- 
     @IBOutlet weak var stackViewProgress: UIStackView!
-    
     @IBOutlet weak var storyItemCollectionView: UICollectionView!
     
     var storyPreviewDelegate: StoryPreviewProtocol?
     var storyDetail: [StoryDetail] = []
     var currentStoryIndex: Int = 0
     var storyProgressView: StoryProgressView?
+    
     private var videoPlayerView: VideoPlayerView?
     private var longGesture: UILongPressGestureRecognizer!
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,16 +49,15 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         storyItemCollectionView.setCollectionViewLayout(layout, animated: false)
+        storyItemCollectionView.isPagingEnabled = true
         storyItemCollectionView.delegate = self
         storyItemCollectionView.dataSource = self
         storyItemCollectionView.isPagingEnabled = true
-        storyItemCollectionView.isScrollEnabled = true
+        storyItemCollectionView.isScrollEnabled = false
     }
-    
     func registerCell() {
         storyItemCollectionView.register(UINib(nibName: "StoryItemDetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "StoryItemDetailCollectionViewCell")
     }
-    
     
     func configure(with story: StoryResponse) {
         lblUsername.text = story.user
@@ -83,50 +77,52 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         setupStoryProgressView(durations: durations)
         
     }
-
+    
     private func setupStoryProgressView(durations: [TimeInterval]) {
         storyProgressView?.removeFromSuperview()
         storyProgressView = StoryProgressView(arrayStories: storyDetail.count, durations: durations)
         storyProgressView?.delegate = self
-       storyProgressView?.frame = stackViewProgress.bounds
+        
+        storyProgressView?.translatesAutoresizingMaskIntoConstraints = false
+        stackViewProgress.addSubview(storyProgressView!)
+        NSLayoutConstraint.activate([
+            storyProgressView!.leadingAnchor.constraint(equalTo: stackViewProgress.leadingAnchor, constant: 4),
+            storyProgressView!.trailingAnchor.constraint(equalTo: stackViewProgress.trailingAnchor, constant: -4),
+            storyProgressView!.topAnchor.constraint(equalTo: stackViewProgress.topAnchor),
+            storyProgressView!.bottomAnchor.constraint(equalTo: stackViewProgress.bottomAnchor)
+        ])
+        storyProgressView?.animate(index: currentStoryIndex)
+    }
+    
+    private func setupStoryProgressView() {
+        storyProgressView?.removeFromSuperview()
+        let durations = storyDetail.compactMap { story -> TimeInterval? in
+            if let videoDurationString = story.videoDuration, let duration = TimeInterval(videoDurationString) {
+                return duration
+            } else {
+                return 10.0
+            }
+        }
+        storyProgressView = StoryProgressView(arrayStories: storyDetail.count, durations: durations)
+        storyProgressView?.delegate = self
+        storyProgressView?.frame = stackViewProgress.bounds
         stackViewProgress.addSubview(storyProgressView!)
         storyProgressView?.animate(index: currentStoryIndex)
     }
-
-    
-    private func setupStoryProgressView() {
-            storyProgressView?.removeFromSuperview()
-            let durations = storyDetail.compactMap { story -> TimeInterval? in
-                if let videoDurationString = story.videoDuration, let duration = TimeInterval(videoDurationString) {
-                    return duration
-                } else {
-                    return 10.0
-                }
-            }
-            storyProgressView = StoryProgressView(arrayStories: storyDetail.count, durations: durations)
-            storyProgressView?.delegate = self
-            storyProgressView?.frame = stackViewProgress.bounds
-            stackViewProgress.addSubview(storyProgressView!)
-            storyProgressView?.animate(index: currentStoryIndex)
-        }
-    
     func segmentedProgressBarChangedIndex(index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
         storyItemCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         currentStoryIndex = index
     }
-    
-    
-    
     func segmentedProgressBarsFinished() {
         if currentStoryIndex < storyDetail.count - 1 {
             currentStoryIndex += 1
             storyProgressView?.animate(index: currentStoryIndex)
-
+            
             let indexPath = IndexPath(item: currentStoryIndex, section: 0)
             storyItemCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             storyItemCollectionView.layoutIfNeeded()
-
+            
             if let cell = storyItemCollectionView.cellForItem(at: indexPath) as? StoryItemDetailCollectionViewCell {
                 cell.videoPlayerView?.playVideo()
             }
@@ -134,7 +130,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
             storyPreviewDelegate?.didStoryViewEnd()
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return storyDetail.count
     }
@@ -148,21 +144,16 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
         cell.configure(with: storyDetail)
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return storyItemCollectionView.frame.size
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         storyProgressView?.resetBar()
         currentStoryIndex = 0
     }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return storyItemCollectionView.frame.size
-    }
-    
-    
     
     private func setupGestureRecognizers() {
         //pause
@@ -202,7 +193,7 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
             storyPreviewDelegate?.didMoveToPreviousStory()
         }
     }
-
+    
     @objc private func didTapRightSide() {
         if currentStoryIndex < storyDetail.count - 1 {
             currentStoryIndex += 1
@@ -212,7 +203,6 @@ class StoryItemCollectionViewCell: UICollectionViewCell, UICollectionViewDelegat
             storyPreviewDelegate?.didStoryViewEnd()
         }
     }
-
     
     private func playCurrentVideo() {
         if let visibleCell = storyItemCollectionView.visibleCells.first as? StoryItemDetailCollectionViewCell {
